@@ -1,112 +1,117 @@
 package ir.hasanazimi.devlab.common.base
 
-import android.content.res.Configuration
-import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import ir.hasanazimi.devlab.presentation.theme.AvandTheme
+import androidx.navigation.compose.rememberNavController
+import ir.hasanazimi.devlab.presentation.theme.AppTheme
+import ir.hasanazimi.devlab.presentation.ui_kit.bottom_navigation_bar.BottomNavigationBar
+import ir.hasanazimi.devlab.presentation.ui_kit.headers.GeneralHeader
+import ir.hasanazimi.devlab.presentation.ui_kit.snack_bar.CustomSnackBar
+import ir.hasanazimi.devlab.presentation.ui_kit.snack_bar.GlobalSnackBarController
+import ir.hasanazimi.devlab.presentation.ui_kit.snack_bar.LocalSnackBarController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BaseScreen(
     modifier: Modifier = Modifier,
-    title: @Composable (() -> Unit)? = null,
-    navigationIcon: @Composable (() -> Unit)? = null,
-    actions: @Composable RowScope.() -> Unit = {},
+    topBar: @Composable (() -> Unit)? = null,
+    bottomBar: @Composable (() -> Unit)? = null,
     content: @Composable (PaddingValues) -> Unit
 ) {
+    val snackBarController = LocalSnackBarController.current as? GlobalSnackBarController
+
+    LaunchedEffect(Unit) {
+        snackBarController?.dismissAll()
+    }
+
     Scaffold(
-        modifier = modifier,
+        modifier = Modifier.fillMaxSize().then(modifier),
         topBar = {
-            title?.let {
-                TopAppBar(
-                    title = it,
-                    navigationIcon = navigationIcon ?: {},
-                    actions = actions,
+            topBar?.let { tb ->
+                CenterAlignedTopAppBar(
+                    title = tb,
+                    modifier = Modifier.fillMaxWidth(),
                     colors = TopAppBarDefaults.topAppBarColors(
-                        containerColor = MaterialTheme.colorScheme.primary,
-                        titleContentColor = MaterialTheme.colorScheme.onPrimary,
-                        navigationIconContentColor = MaterialTheme.colorScheme.onPrimary,
-                        actionIconContentColor = MaterialTheme.colorScheme.onPrimary
+                        containerColor = MaterialTheme.colorScheme.background,
+                        titleContentColor = MaterialTheme.colorScheme.onBackground,
+                        navigationIconContentColor = MaterialTheme.colorScheme.onBackground,
+                        actionIconContentColor = MaterialTheme.colorScheme.onBackground
                     )
                 )
             }
         },
-        content = { paddingValues ->
-            content(paddingValues)
+        bottomBar = { bottomBar?.invoke() },
+        snackbarHost = {
+            snackBarController?.let { sbc ->
+                SnackbarHost(
+                    hostState = sbc.snackBarHostState,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                ) { data ->
+                    val isSuccess = data.visuals.actionLabel?.toBooleanStrictOrNull()
+                    CustomSnackBar(
+                        textMessage = data.visuals.message,
+                        isSuccessfully = isSuccess
+                    )
+                }
+            }
         }
-    )
+    ) { paddingValues ->
+        content(paddingValues)
+    }
 }
 
 
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_YES, locale = "FA")
-@Preview(showBackground = true, uiMode = Configuration.UI_MODE_NIGHT_NO, locale = "FA")
+
+
+@Preview(showBackground = true)
 @Composable
-fun PreviewBaseScreen() {
-    AvandTheme {
+fun BaseScreenContentPreview() {
+
+    /** sample */
+    AppTheme {
         BaseScreen(
-            title = {
-                Text(
-                    text = "صفحه اصلی",
-                    style = MaterialTheme.typography.titleLarge,
-                    textAlign = TextAlign.Start
+            topBar = {
+                GeneralHeader(
+                    title = "title"
+                ) { }
+            },
+            bottomBar = {
+                BottomNavigationBar(
+                    hostNavController = rememberNavController(),
+                    currentDestination = ""
                 )
             },
-            navigationIcon = {
-                IconButton(onClick = { /* بازگشت */ }) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowForward,
-                        contentDescription = "بازگشت"
-                    )
-                }
-            },
-            actions = {
-                IconButton(onClick = { /* تنظیمات */ }) {
-                    Icon(
-                        imageVector = Icons.Default.Settings,
-                        contentDescription = "تنظیمات"
-                    )
-                }
-
-                IconButton(onClick = { /* جستجو */ }) {
-                    Icon(
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "جستجو"
-                    )
-                }
-
-            }
         ) { paddingValues ->
-            Column(
+            Box(
                 modifier = Modifier
-                    .padding(paddingValues)
                     .fillMaxSize()
-                    .padding(16.dp)
+                    .padding(paddingValues)
+                    .background(MaterialTheme.colorScheme.background),
+                contentAlignment = Alignment.Center
             ) {
                 Text(
-                    text = "محتوای صفحه اصلی",
+                    text = "محتوای صفحه",
                     style = MaterialTheme.typography.bodyLarge,
                 )
             }
         }
     }
+
 }

@@ -1,6 +1,5 @@
-package ir.hasanazimi.devlab.common.base
+package ir.hasanazimi.zaghche.common.base
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -18,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ir.hasanazimi.devlab.presentation.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -37,29 +37,30 @@ fun BaseBottomSheet(
 
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview(showBackground = true , uiMode = Configuration.UI_MODE_NIGHT_YES)
-@Preview(showBackground = true , uiMode = Configuration.UI_MODE_NIGHT_NO)
+@Preview(showBackground = true)
 @Composable
 private fun BaseBottomSheetPreview() {
-    Surface {
-        BaseBottomSheet(
-            onDismissRequest = { /* بستن Bottom Sheet */ }
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(16.dp),
-                horizontalAlignment = Alignment.Start
+    AppTheme {
+        Surface {
+            BaseBottomSheet(
+                onDismissRequest = { /* DISMISS*/ }
             ) {
-                Text(
-                    text = "انتخاب شهر",
-                    style = MaterialTheme.typography.titleLarge,
-                )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = "لطفاً یک شهر را انتخاب کنید.",
-                    style = MaterialTheme.typography.bodyLarge,
-                )
+                Column(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(16.dp),
+                    horizontalAlignment = Alignment.Start
+                ) {
+                    Text(
+                        text = "انتخاب شهر",
+                        style = MaterialTheme.typography.titleLarge,
+                    )
+                    Spacer(modifier = Modifier.height(8.dp))
+                    Text(
+                        text = "لطفاً یک شهر را انتخاب کنید.",
+                        style = MaterialTheme.typography.bodyLarge,
+                    )
+                }
             }
         }
     }

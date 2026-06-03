@@ -3,15 +3,14 @@ package ir.hasanazimi.devlab.presentation.theme
 import androidx.compose.ui.graphics.Color
 
 
-// 🎨 رنگ‌های لایت مود
-val LightPrimary = Color(0xFF478AC7)       // رنگ اصلی
-val LightOnPrimary = Color(0xFFFFFFFF)      // رنگ متن روی رنگ اصلی
-val LightBackground = Color(0xFFFFFFFF)     // رنگ پس‌زمینه
-val LightOnBackground = Color(0xFF000000)   // رنگ متن روی پس‌زمینه
-val LightSurface = Color(0xFFF5F5F5)        // رنگ سطوح (مثلاً کارت‌ها)
-val LightOnSurface = Color(0xFF000000)      // رنگ متن روی سطوح
+val LightPrimary = Color(0xFF478AC7)
+val LightOnPrimary = Color(0xFFFFFFFF)
+val LightBackground = Color(0xFFFFFFFF)
+val LightOnBackground = Color(0xFF000000)
+val LightSurface = Color(0xFFF5F5F5)
+val LightOnSurface = Color(0xFF000000)
 
-// 🌙 رنگ‌های دارک مود
+
 val DarkPrimary = Color(0xFF478AC7)
 val DarkOnPrimary = Color(0xFF000000)
 val DarkBackground = Color(0xFF121212)

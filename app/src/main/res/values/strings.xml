@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">DevLab [JC]</string>
+    <string name="confirm">تایید</string>
+    <string name="please_wait">کمی صبر کنید..</string>
+    <string name="mobile_hint_error_message">شماره همراه باید با 0 یا 9 شروع شود!</string>
+    <string name="invalid_email">ایمیل وارد شده معتبر نیست</string>
+    <string name="national_code_is_not_valid">کد پستی صحیح نمی باشد</string>
+    <string name="password_invalid_error_message">رمز عبور معتبر نیست!</string>
 </resources>
