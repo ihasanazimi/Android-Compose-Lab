@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DevLab [JC]</string>
+    <string name="app_name">Android-Lab</string>
     <string name="confirm">تایید</string>
     <string name="please_wait">کمی صبر کنید..</string>
     <string name="mobile_hint_error_message">شماره همراه باید با 0 یا 9 شروع شود!</string>

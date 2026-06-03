@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "ir.hasanazimi.devlab"
+    namespace = "ir.hasanazimi.android_lab"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ir.hasanazimi.jetpackcompose.devlab"
+        applicationId = "ir.hasanazimi.jetpackcompose.android_lab"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -91,24 +91,24 @@ dependencies {
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
 
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.3.0")
 
-    implementation("org.jsoup:jsoup:1.17.2")
+    implementation("org.jsoup:jsoup:1.22.2")
 
 
-    implementation("io.coil-kt:coil-compose:2.5.0")
+    implementation("io.coil-kt:coil-compose:2.7.0")
 
 /*
     implementation ("androidx.compose.material3:material3:1.2.0")
 */
 
-    implementation ("androidx.navigation:navigation-compose:2.8.9")
+    implementation ("androidx.navigation:navigation-compose:2.9.8")
 
     implementation("com.airbnb.android:lottie-compose:6.1.0")
 
-    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.google.code.gson:gson:2.13.1")
 
-    implementation("com.google.accompanist:accompanist-systemuicontroller:0.32.0")
+    implementation("com.google.accompanist:accompanist-systemuicontroller:0.36.0")
 
     // GoogleServices (location)
     implementation(libs.play.services.location)
