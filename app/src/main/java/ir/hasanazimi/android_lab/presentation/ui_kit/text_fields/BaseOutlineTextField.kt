@@ -23,6 +23,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import ir.hasanazimi.android_lab.R
 import ir.hasanazimi.android_lab.presentation.theme.AppTheme
 import ir.hasanazimi.android_lab.presentation.ui_kit.text_fields.text_fields_validators.InputData
 import ir.hasanazimi.android_lab.presentation.ui_kit.text_fields.text_fields_validators.ValidationResult
