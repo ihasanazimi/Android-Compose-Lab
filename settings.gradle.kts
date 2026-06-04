@@ -27,6 +27,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Android-Lab"
+rootProject.name = "Android-Compose-Lab"
 include(":app")
  
