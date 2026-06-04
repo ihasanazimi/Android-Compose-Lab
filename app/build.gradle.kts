@@ -10,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "ir.hasanazimi.android_lab"
+    namespace = "ir.hasanazimi.android_compose_lab"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "ir.hasanazimi.jetpackcompose.android_lab"
+        applicationId = "ir.hasanazimi.android_compose_lab"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
