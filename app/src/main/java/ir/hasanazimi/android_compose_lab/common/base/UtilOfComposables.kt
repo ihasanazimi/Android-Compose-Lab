@@ -1,4 +1,4 @@
-package ir.hasanazimi.zaghche.common.base
+package ir.hasanazimi.android_compose_lab.common.base
 
 import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.animateFloatAsState
@@ -24,16 +24,12 @@ import androidx.lifecycle.compose.LocalLifecycleOwner
 import kotlinx.coroutines.flow.Flow
 
 
-
 @Composable
 fun <T> ObserveSideEffects(flow: Flow<T>, onEffect: (T) -> Unit) {
     LaunchedEffect(flow) {
         flow.collect { onEffect(it) }
     }
 }
-
-
-
 
 
 fun Modifier.safeClick(
@@ -50,10 +46,6 @@ fun Modifier.safeClick(
         }
     }
 }
-
-
-
-
 
 
 /**
@@ -80,9 +72,6 @@ fun OnLifecycleEvent(onEvent: (Lifecycle.Event) -> Unit) {
         }
     }
 }
-
-
-
 
 
 fun Modifier.bounceClick(
@@ -119,11 +108,3 @@ fun Modifier.bounceClick(
             )
         }
 }
-
-
-
-
-
-
-
-

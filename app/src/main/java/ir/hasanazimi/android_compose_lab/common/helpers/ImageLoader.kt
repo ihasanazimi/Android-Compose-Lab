@@ -1,4 +1,4 @@
-package ir.hasanazimi.android_compose_lab.common.base.helpers
+package ir.hasanazimi.android_compose_lab.common.helpers
 
 //import androidx.annotation.RawRes
 //import androidx.compose.runtime.getValue

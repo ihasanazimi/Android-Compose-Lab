@@ -1,8 +1,8 @@
 package ir.hasanazimi.android_compose_lab.presentation.ui_kit.text_fields.text_fields_validators
 
 import ir.hasanazimi.android_compose_lab.R
-import ir.hasanazimi.android_compose_lab.common.base.helpers.extension_helpers.isPersian
-import ir.hasanazimi.android_compose_lab.common.base.helpers.extension_helpers.keepOnlyNumbers
+import ir.hasanazimi.android_compose_lab.common.helpers.extension_helpers.isPersian
+import ir.hasanazimi.android_compose_lab.common.helpers.extension_helpers.keepOnlyNumbers
 import ir.hasanazimi.android_compose_lab.presentation.ui_kit.text_fields.UiText
 import java.text.NumberFormat
 import java.util.Locale

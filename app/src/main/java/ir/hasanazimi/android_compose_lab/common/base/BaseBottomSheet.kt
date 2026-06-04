@@ -1,4 +1,4 @@
-package ir.hasanazimi.zaghche.common.base
+package ir.hasanazimi.android_compose_lab.common.base
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer

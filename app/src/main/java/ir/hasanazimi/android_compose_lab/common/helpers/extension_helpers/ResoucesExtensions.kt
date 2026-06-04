@@ -1,4 +1,4 @@
-package ir.hasanazimi.android_compose_lab.common.base.helpers.extension_helpers
+package ir.hasanazimi.android_compose_lab.common.helpers.extension_helpers
 
 import android.content.Context
 import android.graphics.Color

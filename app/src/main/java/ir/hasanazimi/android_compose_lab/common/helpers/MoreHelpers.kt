@@ -1,4 +1,4 @@
-package ir.hasanazimi.android_compose_lab.common.base.helpers
+package ir.hasanazimi.android_compose_lab.common.helpers
 
 import android.Manifest
 import android.app.Activity
@@ -22,8 +22,8 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.net.toUri
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import ir.hasanazimi.android_compose_lab.common.base.helpers.extension_helpers.isAppAvailable
-import ir.hasanazimi.android_compose_lab.common.base.helpers.extension_helpers.showToast
+import ir.hasanazimi.android_compose_lab.common.helpers.extension_helpers.isAppAvailable
+import ir.hasanazimi.android_compose_lab.common.helpers.extension_helpers.showToast
 
 /**
  * Util class for converting between dp, px and other magical pixel units

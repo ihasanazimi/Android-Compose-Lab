@@ -1,4 +1,4 @@
-package ir.hasanazimi.android_compose_lab.common.base.helpers
+package ir.hasanazimi.android_compose_lab.common.helpers
 
 
 import android.app.Activity

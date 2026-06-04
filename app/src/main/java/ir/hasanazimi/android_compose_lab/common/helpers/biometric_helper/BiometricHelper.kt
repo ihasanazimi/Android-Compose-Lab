@@ -1,4 +1,4 @@
-package ir.hasanazimi.android_compose_lab.common.base.helpers.biometric_helper
+package ir.hasanazimi.android_compose_lab.common.helpers.biometric_helper
 //
 //import android.app.KeyguardManager
 //import android.content.Context
