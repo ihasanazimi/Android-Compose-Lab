@@ -9,7 +9,7 @@ plugins {
 buildscript {
 
     repositories {
-//        maven ("https://maven.myket.ir")
+        maven ("https://maven.myket.ir")
         google()
         mavenCentral()
         maven(url = "https://jitpack.io")
