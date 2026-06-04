@@ -11,7 +11,7 @@ plugins {
 
 android {
     namespace = "ir.hasanazimi.android_compose_lab"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "ir.hasanazimi.android_compose_lab"
