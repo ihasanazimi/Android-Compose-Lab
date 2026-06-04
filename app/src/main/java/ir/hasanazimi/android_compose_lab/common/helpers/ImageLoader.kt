@@ -1,18 +1,18 @@
 package ir.hasanazimi.android_compose_lab.common.helpers
 
-//import androidx.annotation.RawRes
-//import androidx.compose.runtime.getValue
-//import androidx.compose.ui.graphics.Color
-//import androidx.compose.ui.graphics.toArgb
-//import com.airbnb.lottie.LottieProperty
-//import com.airbnb.lottie.SimpleColorFilter
-//import com.airbnb.lottie.compose.LottieAnimation
-//import com.airbnb.lottie.compose.LottieCompositionSpec
-//import com.airbnb.lottie.compose.LottieConstants
-//import com.airbnb.lottie.compose.animateLottieCompositionAsState
-//import com.airbnb.lottie.compose.rememberLottieComposition
-//import com.airbnb.lottie.compose.rememberLottieDynamicProperties
-//import com.airbnb.lottie.compose.rememberLottieDynamicProperty
+import androidx.annotation.RawRes
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
+import com.airbnb.lottie.LottieProperty
+import com.airbnb.lottie.SimpleColorFilter
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.LottieConstants
+import com.airbnb.lottie.compose.animateLottieCompositionAsState
+import com.airbnb.lottie.compose.rememberLottieComposition
+import com.airbnb.lottie.compose.rememberLottieDynamicProperties
+import com.airbnb.lottie.compose.rememberLottieDynamicProperty
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -32,7 +32,6 @@ import ir.hasanazimi.android_compose_lab.R
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
 
-/*
 
 @Composable
 fun LottieAnimationLoader(
@@ -66,7 +65,6 @@ fun LottieAnimationLoader(
         dynamicProperties = dynamicProperties
     )
 }
-*/
 
 
 
